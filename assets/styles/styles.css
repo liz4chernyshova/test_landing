@@ -1,0 +1,868 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Golos Text', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.content {
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1222px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header, .hero {
+  background-color: #E9DED4;
+}
+
+.header {
+  padding: 18px 0;
+}
+
+.logo {
+  width: 213px;
+  height: 32px;
+}
+
+.hero {
+  padding: 22px 0 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 875px;
+  height: 391px;
+  background: url('../images/hero-image.png') center / contain no-repeat;
+  z-index: -1;
+}
+
+.hero-title {
+  font-family: 'Merriweather', serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+}
+
+.hero-title > span {
+  display: block;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 28px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn {
+  width: 100%;
+  display: inline-block;
+  border-radius: 40px;
+  padding: 16px 43px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  transition: all .3s ease;
+}
+
+.btn-dark {
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: #FFFFFF;
+  opacity: .9;
+  color: #1F1F1F;
+}
+
+.btn-dark:hover {
+  background-color: #FBCE51;
+  color: #1F1F1F;
+}
+
+.btn-outline:hover {
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+}
+
+.marquee {
+  background-color: #F54932;
+  color: #FFFFFF;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee-content span {
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.info {
+  padding: 48px 0;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.info-text {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.info-text > span, .info-text-lg > span {
+  display: inline-block;
+  color: #F54932;
+  font-weight: 600;
+}
+
+.info-text-lg {
+  display: none;
+}
+
+.second-text {
+  order: 2;
+}
+
+.info-image {
+  width: 100%;
+  height: auto;
+}
+
+.info-event-image {
+  position: relative;
+  width: 100%;
+  height: 402px;
+}
+
+.info-event-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 370px;
+  height: 100%;
+  background-image: url('../images/info-illustration.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.info-event-table {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 44px 0 40px;
+}
+
+.info-event-table-row {
+  display: flex;
+  border-bottom: 2px solid #D0D0D0;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.info-event-table-col {
+  opacity: .7;
+}
+
+.info-event-table-content {
+  font-weight: 600;
+}
+
+.info-event-table-content > span {
+  text-decoration: line-through;
+  text-decoration-color: #F54932;
+}
+
+.info-event-table-row.cost {
+  flex-direction: row;
+}
+
+.info-event-table-row:last-child {
+  border: none;
+}
+
+.info-contact {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3057A2;
+}
+
+.footer {
+  background-color: #E9DED4;
+  padding: 40px 0 72px;
+}
+
+.footer-text {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  opacity: .6;
+}
+
+.tournament {
+  padding: 48px 0 140px;
+}
+
+.tournament-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.tournament-title {
+  font-size: 36px;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  transition: transform .5s ease-in-out;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.carousel-controls span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #313131;
+  text-align: center;
+  margin: 0 14px;
+}
+
+.carousel-controls button {
+  border: none;
+  background: #313131;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.carousel-controls button:hover {
+  background-color: #FBCE51;
+  color: #FFFFFF;
+}
+
+.carousel-photo {
+  width: 244px;
+  height: 244px;
+  margin-bottom: 28px;
+}
+
+.card {
+  flex: 0 0 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-status {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  opacity: .6;
+}
+
+.card a {
+  display: inline-block;
+  padding: 12px;
+  border: 1px solid #3057A2;
+  color: #3057A2;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: all .3s ease;
+}
+
+.card a:hover {
+  background-color: #3057A2;
+  color: #FFFFFF;
+}
+
+.mobile {
+  display: flex;
+  justify-content: center;
+}
+
+.desktop {
+  display: none;
+}
+
+.stages {
+  margin: 72px 0;
+  position: relative;
+}
+
+.stages::after {
+  content: '';
+  position: absolute;
+  bottom: 47%;
+  right: -100%;
+  width: 335px;
+  height: 182px;
+  background-image: url('../images/plane.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all .7s ease-in;
+}
+
+.stages.visible::after {
+  right: 5%;
+}
+
+.stages-title {
+  font-family: 'Merriweather', serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.stages-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3057A2;
+  margin-bottom: 148px;
+}
+
+.stages-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.stages-carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform .4s ease-in-out;
+}
+
+.stages-card {
+  flex: 0 0 100%;
+  height: 300px;
+  background: #E9DED4;
+  padding: 62px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.stages-card-content {
+  display: flex;
+  gap: 16px;
+}
+
+.stages-card-content > span {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.stages-card-content > p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stages-carousel-controls {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.stages-carousel-controls button {
+  border: none;
+  background: #313131;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.stages-carousel-controls button:hover {
+  background-color: #FBCE51;
+  color: #FFFFFF;
+}
+
+.stages-carousel-controls button:disabled {
+  background-color: #D6D6D6;
+  cursor: not-allowed;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #D9D9D9;
+  border-radius: 50%;
+  display: block;
+}
+
+.dots .active {
+  background: #313131;
+}
+
+.grid-layout {
+  display: none;
+}
+
+.grid-card {
+  background: #E9DED4;
+  padding: 20px;
+  min-height: 112px;
+}
+
+.grid-card.card6, .grid-card.card7 {
+  min-height: 136px;
+}
+
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .hero {
+    padding: 28px 0 220px;
+  }
+
+  .hero::after {
+    width: 875Px;
+    height: 391px;
+    background: url('../images/hero-image-sm.png') center / contain no-repeat;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .btn {
+    width: auto;
+    padding: 16px 36px;
+  }
+
+  .info-image {
+    width: 394px;
+    height: 250px;
+  }
+
+  .info-event-image::after {
+    left: auto;
+    right: 0%;
+  }
+
+  .tournament-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tournament-title {
+    font-size: 44px;
+  }
+
+  .carousel-track {
+    flex-wrap: nowrap;
+  }
+
+  .carousel-controls button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .carousel-photo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .card a {
+    font-size: 15px;
+  }
+
+  .stages-title {
+    font-size: 42px;
+  }
+
+  .stages-subtitle {
+    font-size: 18px;
+  }
+
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 992px) {
+  .logo {
+    width: 245px;
+    height: 36px;
+  }
+
+  .header {
+    padding: 26px 0;
+  }
+
+  .hero {
+    padding: 32px 0 128px;
+  }
+
+  .hero::after {
+    width: 1627px;
+    height: 852px;
+    bottom: -78px;
+    left: 54%;
+    background: url('../images/hero-image-lg.png') center / contain no-repeat;
+  }
+
+  .hero-content {
+    max-width: 550px;
+  }
+
+  .hero-title {
+    font-size: 60px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero-subtitle {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn {
+    padding: 18px 49px;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    opacity: 1;
+    border: 2px solid #1F1F1F;
+    color: #1F1F1F;
+  }
+
+  .marquee {
+    min-height: 60px;
+    font-size: 22px;
+  }
+
+  .info {
+    padding: 80px 0;
+  }
+
+  .info-content {
+    flex-direction: row;
+    margin-bottom: 48px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .info-text {
+    display: none;
+  }
+
+  .info-text-lg {
+    display: block;
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.35;
+  }
+
+  .info-text-lg.fix-width {
+    max-width: 764px;
+  }
+
+  .second-text {
+    order: 0;
+  }
+
+  .info-event-content {
+    align-self: flex-start;
+    max-width: 704px;
+  }
+
+  .info-event-image::after {
+    top: 0;
+    left: -10px;
+    width: 350px;
+    height: 380px;
+  }
+
+  .info-event-table {
+    margin: 55px 0 48px;
+  }
+
+  .info-event-table-row {
+    flex-direction: row;
+    padding: 0;
+    gap: 16px;
+  }
+
+  .info-event-table-col {
+    flex: 0 0 auto;
+    width: 45.33333333%;
+    border-right: 2px solid #D0D0D0;
+    padding: 16px 0;
+  }
+
+  .info-event-table-content {
+    padding: 16px 0;
+  }
+
+  .info-contact {
+    font-size: 20px;
+  }
+
+  .stages {
+    margin: 100px 0;
+  }
+
+  .stages::after {
+    bottom: 23%;
+  }
+
+  .stages.visible::after {
+    right: -7%;
+  }
+
+  .side-image.visible::after {
+    right: 7%;
+  }
+
+  .stages-header {
+    max-width: 806px;
+    margin-bottom: 54px;
+  }
+
+  .stages-title {
+    display: inline;
+    font-size: 54px;
+  }
+
+  .stages-subtitle {
+    display: inline-block;
+    max-width: 280px;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-left: 18px;
+  }
+
+  .stages-carousel {
+    display: none;
+  }
+
+  .stages-card-content {
+    max-width: 480px;
+  }
+
+  .stages-card-content > p {
+    font-size: 20px;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .card1 { grid-column: 1; grid-row: 1; }
+  .card2 { grid-column: 2; grid-row: 1; }
+  .card3 { grid-column: 3; grid-row: 1 / span 2; }
+  .card4 { grid-column: 1; grid-row: 2; }
+  .card5 { grid-column: 2; grid-row: 2; }
+  .card6 { grid-column: 1; grid-row: 3; }
+  .card7 { grid-column: 2 / span 2; grid-row: 3; }
+
+  .tournament-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 60px;
+  }
+
+  .tournament-title {
+    font-size: 54px;
+  }
+
+  .carousel-controls span {
+    font-size: 16px;
+  }
+
+  .carousel-controls button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .card {
+    flex: 0 0 394px;
+  }
+
+  .carousel-photo {
+    width: 320px;
+    height: 320px;
+  }
+
+  .card a {
+    font-size: 16px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .info-event-image::after {
+    top: -90px;
+    left: -70px;
+    width: 529px;
+    height: 670px;
+  }
+
+  .stages::after {
+    bottom: 20%;
+    width: 398px;
+    height: 216px;
+  }
+
+  .stages.visible::after {
+    right: -12%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .stages::after {
+    bottom: 5%;
+  }
+
+  .stages.visible::after {
+    right: 1%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
